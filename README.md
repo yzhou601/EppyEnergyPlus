@@ -16,11 +16,11 @@
 
 
 ### Variables and Paths
-*The initial idf model is needed for energy simulation in different locations and generating new models parametrically.
+* The initial idf model is needed for energy simulation in different locations and generating new models parametrically.
 
-*The paths to weather files are relative addresses. They are not supposed to be changed if the directory is cloned with resources folder "weather". It should be updated if the local directory of weather files is used.
+* The paths to weather files are relative addresses. They are not supposed to be changed if the directory is cloned with resources folder "weather". It should be updated if the local directory of weather files is used.
 
-*The paths to idd and idf files are relative addresses as well. Please update.
+* The paths to idd and idf files are relative addresses as well. Please update.
 
 
 ### Functions
