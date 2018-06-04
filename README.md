@@ -1,15 +1,17 @@
 # EppyEnergyPlus
 
+
 ## Introduction
-*This script could run EnergyPlus parametrically with Eppy package( [Eppy tutorial link](https://pythonhosted.org/eppy/Main_Tutorial.html)), generating new IDF files with different orientations in folder "idfs".
 
-*This script also solves problems when automatically deploying one building IDF model to a large amount of different locations with loops of replacing the ddy information in IDFs and attaching epw files to run.
+* This script could run EnergyPlus parametrically with Eppy package( [Eppy tutorial link](https://pythonhosted.org/eppy/Main_Tutorial.html)), generating new IDF files with different orientations in folder "idfs".
 
-*information in ddy file is extracted and used to replace the "sizing period" part in IDF files with Regex package([Regex Doc](https://docs.python.org/3/library/re.html)).
+* This script also solves problems when automatically deploying one building IDF model to a large amount of different locations with loops of replacing the ddy information in IDFs and attaching epw files to run.
 
-*All the weather files in the database(.epw and .ddy) are downloaded and stored in folder "weather". The locations need to run (weather file names without extensions) are listed in the WeatherFileNameList.csv file under "runtrial". This csv file could be written by reading the weather file name list in the weather directory with function "WriteEPWNameToCSV" or manually edited by entering the weather file name.
+* Information in ddy file is extracted and used to replace the "sizing period" part in IDF files with Regex package([Regex Doc](https://docs.python.org/3/library/re.html)).
 
-*The results of simulations would be stored in folders generated in "runtrial" repository.
+* All the weather files in the database(.epw and .ddy) are downloaded and stored in folder "weather". The locations need to run (weather file names without extensions) are listed in the WeatherFileNameList.csv file under "runtrial". This csv file could be written by reading the weather file name list in the weather directory with function "WriteEPWNameToCSV" or manually edited by entering the weather file name.
+
+* The results of simulations would be stored in folders generated in "runtrial" repository.
 
 
 
@@ -24,7 +26,7 @@
 ### Functions
 
 
-####packddy(ddypath):
+#### packddy(ddypath):
 
     This function helps pack up ddy files into blocks by recognizing blank lines as separations
 
@@ -33,7 +35,7 @@
     :return: This function returns the lists of blocks which are lists of lines in ddy files
 
 
-####pickupblocks(packedlist, tar):
+#### pickupblocks(packedlist, tar):
 
     This function has to be called after packddy function with an arguement of ddy block list, and this function is to pick up the blocks by a special string in the block
 
