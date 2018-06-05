@@ -11,7 +11,7 @@
 
 * Information in ddy file is extracted and used to replace the "sizing period" part in IDF files with Regex package([Regex Doc](https://docs.python.org/3/library/re.html)).
 
-* All the weather files needed are stored in folder "weather" under the main directory. The locations need to run (weather file names without extensions) are listed in the WeatherFileNameList.csv file under "runtrial". This csv file could be written by reading the weather file name list in the weather directory with function "WriteEPWNameToCSV" or manually edited by entering the weather file name.
+* All the weather files needed are initially stored in folder "weather" under the main directory. The locations need to run (weather file names without extensions) are listed in the WeatherFileNameList.csv file under "runtrial". This csv file could be written by reading the weather file name list in the weather directory with function "WriteEPWNameToCSV" or manually edited by entering the weather file name.
 
 * The results of simulations would be stored in folders generated in "runtrial" repository.
 
