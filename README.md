@@ -1,6 +1,8 @@
 # EppyEnergyPlus
 
 
+
+
 ## Introduction
 
 * This script could run EnergyPlus parametrically with Eppy package( [Eppy tutorial link](https://pythonhosted.org/eppy/Main_Tutorial.html)), generating new IDF files with different orientations in folder "idfs".
@@ -28,7 +30,7 @@
 ### Functions
 
 
-#### * packddy(ddypath):
+#### packddy(ddypath):
 
     This function helps pack up ddy files into blocks by recognizing blank lines as separations
 
@@ -37,7 +39,8 @@
     :return: This function returns the lists of blocks which are lists of lines in ddy files
 
 
-#### * pickupblocks(packedlist, tar):
+
+#### pickupblocks(packedlist, tar):
 
     This function has to be called after packddy function with an arguement of ddy block list, and this function is to pick up the blocks by a special string in the block
 
@@ -48,7 +51,8 @@
     :return: This function returns a dictionary of the picked block in which the key is the statement in ddy file after "!-"
 
 
-#### * updatesite(packedlist, idf):
+
+#### updatesite(packedlist, idf):
 
     This function updates the site:Location information in idf file with that in ddy file, this function has to be called after packddy function with an argument of packed ddy list
 
@@ -59,7 +63,8 @@
     :return: This function returns the site:location part updated idf file
 
 
-#### * updateddyitem(DP0, sizingperiod):
+
+#### updateddyitem(DP0, sizingperiod):
 
     This is the process function called by UpdateLocationInfinIDF function which updates each block of design day information
 
@@ -70,7 +75,8 @@
     :return: This function returns the updated block in IDF
 
 
-#### * UpdateLocationInfinIDF(idf1,ddyname):
+
+#### UpdateLocationInfinIDF(idf1,ddyname):
 
     This function Automatically updates the location information as well as the design period information in an idf file
 
@@ -81,7 +87,8 @@
     :return: This function returns the updated idf file
 
 
-### * WriteEPWNameToCSV(WeatherPath, CsvPath, i):
+
+### WriteEPWNameToCSV(WeatherPath, CsvPath, i):
 
     This function automatically writes the csv file with weather file names by reading the name list in the directory where these files stored.
 
@@ -94,7 +101,8 @@
     :return: This function returns nothing
 
 
-### * ReadFileNameInCsv(dir):
+
+### ReadFileNameInCsv(dir):
 
     This function reads the file names stored in a .csv file
 
