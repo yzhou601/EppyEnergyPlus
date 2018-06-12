@@ -177,7 +177,7 @@ weatherfilename_list = ReadFileNameInCsv(CSVDir)
 
 print(weatherfilename_list)
 
-##run with different locations
+##run with different locations loop
 for i in weatherfilename_list:
     epwname = epwDir + i +'.epw'         ##Before write the path, put weather files in EnergyPlus WeatherData folder
     ddyname = ddyDir + i +'.ddy'
@@ -192,8 +192,10 @@ for i in weatherfilename_list:
     resultsdir = rundirname+'TestResults\\'+'Unsized'+ i
     ##os.makedirs(resultsdir)
     ##idf1.saveas(DirName + "/idfs/"+'EC'+i+'.idf')
-    ##idf1.run(output_directory = resultsdir, expandobjects=True)
+    idf1.run(output_directory = resultsdir, expandobjects=True) #Ideal Air Load Model used for load calculation, expandobject has to be turned on
 
+    ##Result Parsing, Ideal Air Loads model used for load calculation
+    ##IDF has to generate the "Zone Component Load Summary Report" to use this script to pick up the load result
     resultpath = resultsdir + '\\eplustbl.htm'
     filehandle = open(resultpath, 'r').read()
     tables = readhtml.lines_table(filehandle)
@@ -217,6 +219,7 @@ for i in weatherfilename_list:
 
     ##pp.pprint(firstitem)
 
+##paramatric orientation loop
 '''
 Axis = 0
 while Axis in range(0,360):
@@ -227,5 +230,4 @@ while Axis in range(0,360):
  idf1.run(output_directory = resultsdirAxis)
  Axis += 45
  '''
-
 
