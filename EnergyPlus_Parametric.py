@@ -2,6 +2,9 @@ import csv
 import os
 import re
 from eppy.modeleditor import IDF
+from eppy.results import readhtml
+import pprint
+
 
 ##pack the file into blocks
 def packddy(ddypath):
@@ -169,7 +172,7 @@ WeatherDir = DirName+'/weather/weather_files_ddy_epw/'
 epwDir = WeatherDir + 'epw/USA/'
 ddyDir = WeatherDir + 'ddy/USA/'
 CSVDir = DirName+'/runtrial/WeatherFileNameList.csv'
-WriteEPWNameToCSV(epwDir, CSVDir , 8)
+##WriteEPWNameToCSV(epwDir, CSVDir , 8)
 weatherfilename_list = ReadFileNameInCsv(CSVDir)
 
 print(weatherfilename_list)
@@ -178,24 +181,51 @@ print(weatherfilename_list)
 for i in weatherfilename_list:
     epwname = epwDir + i +'.epw'         ##Before write the path, put weather files in EnergyPlus WeatherData folder
     ddyname = ddyDir + i +'.ddy'
-    fname1 = DirName + '/runtrial/TrialKA2_Unsized.idf'
+    fname1 = 'C:\\Users\\yueyue.zhou\\Documents\\Intern\\ShadeStudy\\C1NoShadeAustinIdeal.idf'
     idf1 = IDF(fname1, epwname)
     UpdateLocationInfinIDF(idf1,ddyname)
     ##idf1.printidf()
     building = idf1.idfobjects['BUILDING'][0]
     building.Name = "KA2 A Flatroof Sample Building"
     objectlist = idf1.idfobjects
-    rundirname = u'../eppy_energy-/runtrial/'
-    resultsdir = rundirname+'results'+i
+    rundirname = 'C:\\Users\\yueyue.zhou\\Documents\\Intern\\ShadeStudy\\'
+    resultsdir = rundirname+'TestResults\\'+'Unsized'+ i
     ##os.makedirs(resultsdir)
-    idf1.saveas(DirName + "/idfs/"+i+'.idf')
-    idf1.run(output_directory = resultsdir)
+    ##idf1.saveas(DirName + "/idfs/"+'EC'+i+'.idf')
+    ##idf1.run(output_directory = resultsdir, expandobjects=True)
 
+    resultpath = resultsdir + '\\eplustbl.htm'
+    filehandle = open(resultpath, 'r').read()
+    tables = readhtml.lines_table(filehandle)
+    line1 = 'Zone Component Load Summary'
+    line2 = 'Estimated Cooling Peak Load Components'
+    line3 = 'Estimated Heating Peak Load Components'
+    pp = pprint.PrettyPrinter()
+    for table in tables:
+        if line2 in table[0]:
+            targettable = table[-1]
+            LoadClg = targettable[26][5]
+            Zonename = table[0][2]
+            pp.pprint('{0} {1} Cooling = {2}'.format(i,Zonename,LoadClg))
+        elif line3 in table[0]:
+            targettable2 = table[-1]
+            LoadHtg = targettable2[26][5]
+            pp.pprint('{0} {1} Heating = {2}' .format(i,Zonename, LoadHtg))
+
+            ##firstitem = tables[0]
+    ##print(firstitem)
+
+    ##pp.pprint(firstitem)
+
+'''
 Axis = 0
 while Axis in range(0,360):
-    building.North_Axis = Axis
-    ##idf1.saveas(DirName+'/idfs/Axises/'+str(Axis)+".idf")
-    resultsdirAxis= rundirname+'results'+i+'Axis'+str(Axis)
-    ##os.makedirs(resultsdirAxis)
-    ##idf1.run(output_directory = resultsdirAxis)
-    Axis += 45
+ building.North_Axis = Axis
+ idf1.saveas(rundirname+'idfs\\Axises\\'+str(Axis)+".idf")
+ resultsdirAxis= rundirname+'results\\'+i+'Axis'+str(Axis)
+ os.makedirs(resultsdirAxis)
+ idf1.run(output_directory = resultsdirAxis)
+ Axis += 45
+ '''
+
+
