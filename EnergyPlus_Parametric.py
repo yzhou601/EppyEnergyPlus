@@ -214,11 +214,6 @@ for i in weatherfilename_list:
             LoadHtg = targettable2[26][5]
             pp.pprint('{0} {1} Heating = {2}' .format(i,Zonename, LoadHtg))
 
-            ##firstitem = tables[0]
-    ##print(firstitem)
-
-    ##pp.pprint(firstitem)
-
 ##paramatric orientation loop
 '''
 Axis = 0
