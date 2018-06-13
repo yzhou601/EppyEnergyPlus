@@ -15,6 +15,11 @@
 
 * The results of simulations would be stored in folders generated in "runtrial" repository.
 
+* At this stage, this script is used for load calculation, so the "Ideal Air Load" model is used, which requires expand object file to run. Therefore, the "expandobjects" has to be set "True" when calling the run() function in eppy
+
+* "Zone Component Load Summary Report" is generated (defined in initial IDF file using IDF editor) to see the load result, and some script is written for parsing the total load number (sensible+ latent).
+**Note: if the IDF "Output:Table:SummaryReports" is not defined to generate "Zone Component Load Summary" report, then this part of script is not gonna work**
+
 
 
 ### Variables and Paths
