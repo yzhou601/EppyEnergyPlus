@@ -1,0 +1,476 @@
+!- Windows Line endings 
+
+SimulationControl,
+    Yes,                      !- Do Zone Sizing Calculation
+    Yes,                      !- Do System Sizing Calculation
+    No,                       !- Do Plant Sizing Calculation
+    Yes,                      !- Run Simulation for Sizing Periods
+    Yes;                      !- Run Simulation for Weather File Run Periods
+
+Sizing:System,
+    Air Loop HVAC 1,          !- AirLoop Name
+    Sensible,                 !- Type of Load to Size On
+    Autosize,                 !- Design Outdoor Air Flow Rate
+    0.3,                      !- Central Heating Maximum System Air Flow Ratio
+    7.0,                      !- Preheat Design Temperature
+    0.008,                    !- Preheat Design Humidity Ratio
+    12.8,                     !- Precool Design Temperature
+    0.008,                    !- Precool Design Humidity Ratio
+    12.8,                     !- Central Cooling Design Supply Air Temperature
+    16.7,                     !- Central Heating Design Supply Air Temperature
+    NonCoincident,            !- Type of Zone Sum to Use
+    Yes,                      !- 100 Outdoor Air in Cooling
+    Yes,                      !- 100 Outdoor Air in Heating
+    0.0085,                   !- Central Cooling Design Supply Air Humidity Ratio
+    0.008,                    !- Central Heating Design Supply Air Humidity Ratio
+    DesignDay,                !- Cooling Supply Air Flow Rate Method
+    0.0,                      !- Cooling Supply Air Flow Rate
+    0.0099676501,             !- Cooling Supply Air Flow Rate Per Floor Area
+    1.0,                      !- Cooling Fraction of Autosized Cooling Supply Air Flow Rate
+    3.9475456e-05,            !- Cooling Supply Air Flow Rate Per Unit Cooling Capacity
+    DesignDay,                !- Heating Supply Air Flow Rate Method
+    0.0,                      !- Heating Supply Air Flow Rate
+    0.0099676501,             !- Heating Supply Air Flow Rate Per Floor Area
+    1.0,                      !- Heating Fraction of Autosized Heating Supply Air Flow Rate
+    1.0,                      !- Heating Fraction of Autosized Cooling Supply Air Flow Rate
+    3.1588213e-05,            !- Heating Supply Air Flow Rate Per Unit Heating Capacity
+    ZoneSum,                  !- System Outdoor Air Method
+    1.0,                      !- Zone Maximum Outdoor Air Fraction
+    CoolingDesignCapacity,    !- Cooling Design Capacity Method
+    Autosize,                 !- Cooling Design Capacity
+    234.7,                    !- Cooling Design Capacity Per Floor Area
+    1.0,                      !- Fraction of Autosized Cooling Design Capacity
+    HeatingDesignCapacity,    !- Heating Design Capacity Method
+    Autosize,                 !- Heating Design Capacity
+    157.0,                    !- Heating Design Capacity Per Floor Area
+    1.0,                      !- Fraction of Autosized Heating Design Capacity
+    OnOff;                    !- Central Cooling Capacity Control Method
+
+
+AirTerminal:SingleDuct:Uncontrolled,
+    Diffuser 1,               !- Name
+    Always On Discrete,    !- Availability Schedule Name
+    Node 17,                  !- Zone Supply Air Node Name
+    AutoSize;                 !- Maximum Air Flow Rate
+
+
+ZoneHVAC:EquipmentList,
+    01_A2 Equipment List,     !- Name
+    ,                         !- Load Distribution Scheme
+    AirTerminal:SingleDuct:Uncontrolled,    !- Zone Equipment 1 Object Type
+    Diffuser 1,               !- Zone Equipment 1 Name
+    1,                        !- Zone Equipment 1 Cooling Sequence
+    1;                        !- Zone Equipment 1 Heating or NoLoad Sequence
+
+ZoneHVAC:EquipmentConnections,
+    01_A2,                    !- Zone Name
+    01_A2 Equipment List,     !- Zone Conditioning Equipment List Name
+    01_A2 Inlet Node List,    !- Zone Air Inlet Node or NodeList Name
+    ,                         !- Zone Air Exhaust Node or NodeList Name
+    Node 1,                   !- Zone Air Node Name
+    Node 76;                  !- Zone Return Air Node or NodeList Name
+
+Fan:OnOff,
+    Fan On Off 1,             !- Name
+    Always On Discrete,    !- Availability Schedule Name
+    0.6,                      !- Fan Total Efficiency
+    300,                      !- Pressure Rise
+    0.3246998409216,          !- Maximum Flow Rate
+    0.8,                      !- Motor Efficiency
+    1.0,                      !- Motor In Airstream Fraction
+    Node 75,                  !- Air Inlet Node Name
+    Unitary - DX Heat Pump - Cycling - Elec reheat 1 Fan - Cooling Coil Node,    !- Air Outlet Node Name
+    Fan On Off Power Curve 5,    !- Fan Power Ratio Function of Speed Ratio Curve Name
+    Fan On Off Efficiency Curve 1,    !- Fan Efficiency Ratio Function of Speed Ratio Curve Name
+    General;                  !- EndUse Subcategory
+
+Coil:Cooling:DX:SingleSpeed,
+    1 Spd DX Clg Coil 1,      !- Name
+    Always On Discrete,    !- Availability Schedule Name
+    7033.70568413333,         !- Gross Rated Total Cooling Capacity
+    Autosize,                 !- Gross Rated Sensible Heat Ratio
+    3.52,                     !- Gross Rated Cooling COP
+    Autosize,                 !- Rated Air Flow Rate
+    773.3,                    !- Rated Evaporator Fan Power Per Volume Flow Rate
+    Unitary - DX Heat Pump - Cycling - Elec reheat 1 Fan - Cooling Coil Node,    !- Air Inlet Node Name
+    Unitary - DX Heat Pump - Cycling - Elec reheat 1 Cooling Coil - Heating Coil Node,    !- Air Outlet Node Name
+    Curve Biquadratic 10,     !- Total Cooling Capacity Function of Temperature Curve Name
+    Curve Quadratic 15,       !- Total Cooling Capacity Function of Flow Fraction Curve Name
+    Curve Biquadratic 2,      !- Energy Input Ratio Function of Temperature Curve Name
+    Curve Quadratic 4,        !- Energy Input Ratio Function of Flow Fraction Curve Name
+    Curve Quadratic 24,       !- Part Load Fraction Correlation Curve Name
+    ,                         !- Minimum Outdoor DryBulb Temperature for Compressor Operation
+    ,                         !- Nominal Time for Condensate Removal to Begin
+    ,                         !- Ratio of Initial Moisture Evaporation Rate and Steady State Latent Capacity
+    ,                         !- Maximum Cycling Rate
+    ,                         !- Latent Capacity Time Constant
+    ,                         !- Condenser Air Inlet Node Name
+    AirCooled,                !- Condenser Type
+    0.0,                      !- Evaporative Condenser Effectiveness
+    Autosize,                 !- Evaporative Condenser Air Flow Rate
+    Autosize,                 !- Evaporative Condenser Pump Rated Power Consumption
+    0.0,                      !- Crankcase Heater Capacity
+    0.0,                      !- Maximum Outdoor DryBulb Temperature for Crankcase Heater Operation
+    ,                         !- Supply Water Storage Tank Name
+    ,                         !- Condensate Collection Water Storage Tank Name
+    0.0,                      !- Basin Heater Capacity
+    10.0;                     !- Basin Heater Setpoint Temperature
+
+
+Coil:Heating:Electric,
+    Elec Htg Coil 1,          !- Name
+    Always Off Discrete,      !- Availability Schedule Name
+    1,                        !- Efficiency
+    Autosize,                 !- Nominal Capacity
+    Unitary - DX Heat Pump - Cycling - Elec reheat 1 Heating Coil - Supplemental Coil Node,    !- Air Inlet Node Name
+    Node 14;                  !- Air Outlet Node Name
+
+
+Coil:Heating:DX:SingleSpeed,
+    1 Spd DX Htg Coil 1,      !- Name
+    Always On Discrete,    !- Availability Schedule Name
+    7912.91889465,            !- Gross Rated Heating Capacity
+    2.93,                     !- Gross Rated Heating COP
+    Autosize,                 !- Rated Air Flow Rate
+    773.3,                    !- Rated Supply Fan Power Per Volume Flow Rate
+    Unitary - DX Heat Pump - Cycling - Elec reheat 1 Cooling Coil - Heating Coil Node,    !- Air Inlet Node Name
+    Unitary - DX Heat Pump - Cycling - Elec reheat 1 Heating Coil - Supplemental Coil Node,    !- Air Outlet Node Name
+    Curve Cubic 5,            !- Heating Capacity Function of Temperature Curve Name
+    Curve Cubic 2,            !- Heating Capacity Function of Flow Fraction Curve Name
+    Curve Cubic 3,            !- Energy Input Ratio Function of Temperature Curve Name
+    Curve Quadratic 17,       !- Energy Input Ratio Function of Flow Fraction Curve Name
+    Curve Quadratic 13,       !- Part Load Fraction Correlation Curve Name
+    ,                         !- Defrost Energy Input Ratio Function of Temperature Curve Name
+    -8.0,                     !- Minimum Outdoor DryBulb Temperature for Compressor Operation
+    ,                         !- Outdoor DryBulb Temperature to Turn On Compressor
+    5.0,                      !- Maximum Outdoor DryBulb Temperature for Defrost Operation
+    0.0,                      !- Crankcase Heater Capacity
+    10.0,                     !- Maximum Outdoor DryBulb Temperature for Crankcase Heater Operation
+    Resistive,                !- Defrost Strategy
+    Timed,                    !- Defrost Control
+    0.166667,                 !- Defrost Time Period Fraction
+    2000.0;                   !- Resistive Defrost Heater Capacity
+
+
+AirLoopHVAC:UnitarySystem,
+    Unitary - DX Heat Pump - Cycling - Elec reheat 1,    !- Name
+    Load,                     !- Control Type
+    01_A2,                    !- Controlling Zone or Thermostat Location
+    None,                     !- Dehumidification Control Type
+    ,                         !- Availability Schedule Name
+    Node 75,                  !- Air Inlet Node Name
+    Node 14,                  !- Air Outlet Node Name
+    Fan:OnOff,                !- Supply Fan Object Type
+    Fan On Off 1,             !- Supply Fan Name
+    BlowThrough,              !- Fan Placement
+    ,                         !- Supply Air Fan Operating Mode Schedule Name
+    Coil:Heating:DX:SingleSpeed,    !- Heating Coil Object Type
+    1 Spd DX Htg Coil 1,      !- Heating Coil Name
+    1.0,                      !- DX Heating Coil Sizing Ratio
+    Coil:Cooling:DX:SingleSpeed,    !- Cooling Coil Object Type
+    1 Spd DX Clg Coil 1,      !- Cooling Coil Name
+    No,                       !- Use DOAS DX Cooling Coil
+    2.0,                      !- Minimum Supply Air Temperature
+    SensibleOnlyLoadControl,    !- Latent Load Control
+    Coil:Heating:Electric,    !- Supplemental Heating Coil Object Type
+    Elec Htg Coil 1,          !- Supplemental Heating Coil Name
+    ,                         !- Cooling Supply Air Flow Rate Method
+    Autosize,                 !- Cooling Supply Air Flow Rate
+    ,                         !- Cooling Supply Air Flow Rate Per Floor Area
+    ,                         !- Cooling Fraction of Autosized Cooling Supply Air Flow Rate
+    ,                         !- Cooling Supply Air Flow Rate Per Unit of Capacity
+    ,                         !- Heating Supply Air Flow Rate Method
+    Autosize,                 !- Heating Supply Air Flow Rate
+    ,                         !- Heating Supply Air Flow Rate Per Floor Area
+    ,                         !- Heating Fraction of Autosized Heating Supply Air Flow Rate
+    ,                         !- Heating Supply Air Flow Rate Per Unit of Capacity
+    ,                         !- No Load Supply Air Flow Rate Method
+    Autosize,                 !- No Load Supply Air Flow Rate
+    ,                         !- No Load Supply Air Flow Rate Per Floor Area
+    ,                         !- No Load Fraction of Autosized Cooling Supply Air Flow Rate
+    ,                         !- No Load Fraction of Autosized Heating Supply Air Flow Rate
+    ,                         !- No Load Supply Air Flow Rate Per Unit of Capacity During Cooling Operation
+    ,                         !- No Load Supply Air Flow Rate Per Unit of Capacity During Heating Operation
+    80.0,                     !- Maximum Supply Air Temperature
+    21.0,                     !- Maximum Outdoor DryBulb Temperature for Supplemental Heater Operation
+    ,                         !- Outdoor DryBulb Temperature Sensor Node Name
+    2.5,                      !- Maximum Cycling Rate
+    60.0,                     !- Heat Pump Time Constant
+    0.01,                     !- Fraction of OnCycle Power Use
+    60.0,                     !- Heat Pump Fan Delay Time
+    0.0,                      !- Ancillary OnCycle Electric Power
+    0.0;                      !- Ancillary OffCycle Electric Power
+
+Controller:OutdoorAir,
+    Outdoor Air Controller 1,    !- Name
+    Node 74,                  !- Relief Air Outlet Node Name
+    Node 13,                  !- Return Air Node Name
+    Node 75,                  !- Mixed Air Node Name
+    Node 73,                  !- Actuator Node Name
+    Autosize,                 !- Minimum Outdoor Air Flow Rate
+    Autosize,                 !- Maximum Outdoor Air Flow Rate
+    NoEconomizer,             !- Economizer Control Type
+    ModulateFlow,             !- Economizer Control Action Type
+    28.0,                     !- Economizer Maximum Limit DryBulb Temperature
+    64000.0,                  !- Economizer Maximum Limit Enthalpy
+    ,                         !- Economizer Maximum Limit Dewpoint Temperature
+    ,                         !- Electronic Enthalpy Limit Curve Name
+    -100.0,                   !- Economizer Minimum Limit DryBulb Temperature
+    NoLockout,                !- Lockout Type
+    FixedMinimum,             !- Minimum Limit Type
+    ,                         !- Minimum Outdoor Air Schedule Name
+    ,                         !- Minimum Fraction of Outdoor Air Schedule Name
+    ,                         !- Maximum Fraction of Outdoor Air Schedule Name
+    Controller Mechanical Ventilation 1,    !- Mechanical Ventilation Controller Name
+    ,                         !- Time of Day Economizer Control Schedule Name
+    No,                       !- High Humidity Control
+    ,                         !- Humidistat Control Zone Name
+    ,                         !- High Humidity Outdoor Air Flow Ratio
+    Yes,                      !- Control High Indoor Humidity Based on Outdoor Humidity Ratio
+    BypassWhenOAFlowGreaterThanMinimum;    !- Heat Recovery Bypass Control Type
+
+
+Controller:MechanicalVentilation,
+    Controller Mechanical Ventilation 1,    !- Name
+    Always On Discrete,    !- Availability Schedule Name
+    No,                       !- Demand Controlled Ventilation
+    ZoneSum,                  !- System Outdoor Air Method
+    ,                         !- Zone Maximum Outdoor Air Fraction
+    01_A2,                    !- Zone 1 Name
+    90.1-2010 - MidriseApartment - Apartment Ventilation,    !- Design Specification Outdoor Air Object Name 1
+    01_A2 Design Spec Zone Air Dist;    !- Design Specification Zone Air Distribution Object Name 1
+
+
+AirLoopHVAC:ControllerList,
+    OA System 1 Controller List,    !- Name
+    Controller:OutdoorAir,    !- Controller 1 Object Type
+    Outdoor Air Controller 1;    !- Controller 1 Name
+
+
+AirLoopHVAC,
+    Air Loop HVAC 1,          !- Name
+    ,                         !- Controller List Name
+    Air Loop HVAC 1Availability Manager List,    !- Availability Manager List Name
+    AutoSize,                 !- Design Supply Air Flow Rate
+    Air Loop HVAC 1 Supply Branches,    !- Branch List Name
+    ,                         !- Connector List Name
+    Node 13,                  !- Supply Side Inlet Node Name
+    Node 16,                  !- Demand Side Outlet Node Name
+    Air Loop HVAC 1 Demand Inlet Nodes,    !- Demand Side Inlet Node Names
+    Air Loop HVAC 1 Supply Outlet Nodes;    !- Supply Side Outlet Node Names
+
+
+
+AirLoopHVAC:OutdoorAirSystem:EquipmentList,
+    OA System 1 Equipment List,    !- Name
+    OutdoorAir:Mixer,         !- Component 1 Object Type
+    OA System 1 Outdoor Air Mixer;    !- Component 1 Name
+
+
+
+AirLoopHVAC:OutdoorAirSystem,
+    OA System 1,              !- Name
+    OA System 1 Controller List,    !- Controller List Name
+    OA System 1 Equipment List,    !- Outdoor Air Equipment List Name
+    OA System 1 Availability Manager List;    !- Availability Manager List Name
+
+
+OutdoorAir:Mixer,
+    OA System 1 Outdoor Air Mixer,    !- Name
+    Node 75,                  !- Mixed Air Node Name
+    Node 73,                  !- Outdoor Air Stream Node Name
+    Node 74,                  !- Relief Air Stream Node Name
+    Node 13;                  !- Return Air Stream Node Name
+
+
+AirLoopHVAC:ZoneSplitter,
+    Air Loop HVAC Zone Splitter 1,    !- Name
+    Node 15,                  !- Inlet Node Name
+    Node 17;                  !- Outlet 1 Node Name
+
+
+
+AirLoopHVAC:SupplyPath,
+    Air Loop HVAC 1 Node 15 Supply Path,    !- Name
+    Node 15,                  !- Supply Air Path Inlet Node Name
+    AirLoopHVAC:ZoneSplitter,    !- Component 1 Object Type
+    Air Loop HVAC Zone Splitter 1;    !- Component 1 Name
+
+
+AirLoopHVAC:ZoneMixer,
+    Air Loop HVAC Zone Mixer 1,    !- Name
+    Node 16,                  !- Outlet Node Name
+    Node 76;                  !- Inlet 1 Node Name
+
+
+
+AirLoopHVAC:ReturnPath,
+    Air Loop HVAC 1 Return Path,    !- Name
+    Node 16,                  !- Return Air Path Outlet Node Name
+    AirLoopHVAC:ZoneMixer,    !- Component 1 Object Type
+    Air Loop HVAC Zone Mixer 1;    !- Component 1 Name
+
+
+Branch,
+    Air Loop HVAC 1 Main Branch,    !- Name
+    ,                         !- Pressure Drop Curve Name
+    AirLoopHVAC:OutdoorAirSystem,    !- Component 1 Object Type
+    OA System 1,              !- Component 1 Name
+    Node 13,                  !- Component 1 Inlet Node Name
+    Node 75,                  !- Component 1 Outlet Node Name
+    AirLoopHVAC:UnitarySystem,    !- Component 2 Object Type
+    Unitary - DX Heat Pump - Cycling - Elec reheat 1,    !- Component 2 Name
+    Node 75,                  !- Component 2 Inlet Node Name
+    Node 14;                  !- Component 2 Outlet Node Name
+
+
+BranchList,
+    Air Loop HVAC 1 Supply Branches,    !- Name
+    Air Loop HVAC 1 Main Branch;    !- Branch 1 Name
+
+
+
+NodeList,
+    01_A2 Inlet Node List,    !- Name
+    Node 17;                  !- Node 1 Name
+
+NodeList,
+    01_A2 Inlet Node List,    !- Name
+    Node 17;                  !- Node 1 Name
+
+NodeList,
+    01_A2 Inlet Node List,    !- Name
+    Node 17;                  !- Node 1 Name
+
+OutdoorAir:NodeList,
+    Node 73;                  !- Node or NodeList Name 1
+
+
+
+AvailabilityManager:Scheduled,
+    Air Loop HVAC 1 Availability Manager,    !- Name
+    Always On Discrete;       !- Schedule Name
+
+AvailabilityManager:Scheduled,
+    Air Loop HVAC 1 Availability Manager,    !- Name
+    Always On Discrete;       !- Schedule Name
+
+AvailabilityManagerAssignmentList,
+    Air Loop HVAC 1Availability Manager List,    !- Name
+    AvailabilityManager:Scheduled,    !- Availability Manager 1 Object Type
+    Air Loop HVAC 1 Availability Manager;    !- Availability Manager 1 Name
+
+AvailabilityManagerAssignmentList,
+    Air Loop HVAC 1Availability Manager List,    !- Name
+    AvailabilityManager:Scheduled,    !- Availability Manager 1 Object Type
+    Air Loop HVAC 1 Availability Manager;    !- Availability Manager 1 Name
+
+Curve:Biquadratic,
+  Curve Biquadratic 10,                   !- Name
+  0.766956,                               !- Coefficient1 Constant
+  0.0107756,                              !- Coefficient2 x
+  -4.14703e-005,                          !- Coefficient3 x**2
+  0.00134961,                             !- Coefficient4 y
+  -0.000261144,                           !- Coefficient5 y**2
+  0.000457488,                            !- Coefficient6 x*y
+  17,                                     !- Minimum Value of x {BasedOnField A2}
+  22,                                     !- Maximum Value of x {BasedOnField A2}
+  13,                                     !- Minimum Value of y {BasedOnField A3}
+  46;                                     !- Maximum Value of y {BasedOnField A3}
+
+Curve:Biquadratic,
+  Curve Biquadratic 2,                    !- Name
+  0.297145,                               !- Coefficient1 Constant
+  0.0430933,                              !- Coefficient2 x
+  -0.000748766,                           !- Coefficient3 x**2
+  0.00597727,                             !- Coefficient4 y
+  0.000482112,                            !- Coefficient5 y**2
+  -0.000956448,                           !- Coefficient6 x*y
+  17,                                     !- Minimum Value of x {BasedOnField A2}
+  22,                                     !- Maximum Value of x {BasedOnField A2}
+  13,                                     !- Minimum Value of y {BasedOnField A3}
+  46;                                     !- Maximum Value of y {BasedOnField A3}
+
+Curve:Cubic,
+  Curve Cubic 2,                          !- Name
+  0.84,                                   !- Coefficient1 Constant
+  0.16,                                   !- Coefficient2 x
+  0,                                      !- Coefficient3 x**2
+  0,                                      !- Coefficient4 x**3
+  0.5,                                    !- Minimum Value of x {BasedOnField A2}
+  1.5;                                    !- Maximum Value of x {BasedOnField A2}
+
+Curve:Cubic,
+  Curve Cubic 3,                          !- Name
+  1.19248,                                !- Coefficient1 Constant
+  -0.0300438,                             !- Coefficient2 x
+  0.00103745,                             !- Coefficient3 x**2
+  -2.3328e-005,                           !- Coefficient4 x**3
+  -20,                                    !- Minimum Value of x {BasedOnField A2}
+  20;                                     !- Maximum Value of x {BasedOnField A2}
+
+Curve:Cubic,
+  Curve Cubic 5,                          !- Name
+  0.758746,                               !- Coefficient1 Constant
+  0.027626,                               !- Coefficient2 x
+  0.000148716,                            !- Coefficient3 x**2
+  3.4992e-006,                            !- Coefficient4 x**3
+  -20,                                    !- Minimum Value of x {BasedOnField A2}
+  20;                                     !- Maximum Value of x {BasedOnField A2}
+
+Curve:Cubic,
+  Fan On Off Efficiency Curve 1,          !- Name
+  1,                                      !- Coefficient1 Constant
+  0,                                      !- Coefficient2 x
+  0,                                      !- Coefficient3 x**2
+  0,                                      !- Coefficient4 x**3
+  0,                                      !- Minimum Value of x {BasedOnField A2}
+  1;                                      !- Maximum Value of x {BasedOnField A2}
+
+Curve:Exponent,
+  Fan On Off Power Curve 5,               !- Name
+  1,                                      !- Coefficient1 Constant
+  0,                                      !- Coefficient2 Constant
+  0,                                      !- Coefficient3 Constant
+  0,                                      !- Minimum Value of x {BasedOnField A2}
+  1;                                      !- Maximum Value of x {BasedOnField A2}
+
+Curve:Quadratic,
+  Curve Quadratic 13,                     !- Name
+  0.75,                                   !- Coefficient1 Constant
+  0.25,                                   !- Coefficient2 x
+  0,                                      !- Coefficient3 x**2
+  0,                                      !- Minimum Value of x {BasedOnField A2}
+  1;                                      !- Maximum Value of x {BasedOnField A2}
+
+Curve:Quadratic,
+  Curve Quadratic 15,                     !- Name
+  0.8,                                    !- Coefficient1 Constant
+  0.2,                                    !- Coefficient2 x
+  0,                                      !- Coefficient3 x**2
+  0.5,                                    !- Minimum Value of x {BasedOnField A2}
+  1.5;                                    !- Maximum Value of x {BasedOnField A2}
+
+Curve:Quadratic,
+  Curve Quadratic 17,                     !- Name
+  1.3824,                                 !- Coefficient1 Constant
+  -0.4336,                                !- Coefficient2 x
+  0.0512,                                 !- Coefficient3 x**2
+  0,                                      !- Minimum Value of x {BasedOnField A2}
+  1;                                      !- Maximum Value of x {BasedOnField A2}
+
+Curve:Quadratic,
+  Curve Quadratic 24,                     !- Name
+  0.75,                                   !- Coefficient1 Constant
+  0.25,                                   !- Coefficient2 x
+  0,                                      !- Coefficient3 x**2
+  0,                                      !- Minimum Value of x {BasedOnField A2}
+  1;                                      !- Maximum Value of x {BasedOnField A2}
+
+Curve:Quadratic,
+  Curve Quadratic 4,                      !- Name
+  1.156,                                  !- Coefficient1 Constant
+  -0.1816,                                !- Coefficient2 x
+  0.0256,                                 !- Coefficient3 x**2
+  0.5,                                    !- Minimum Value of x {BasedOnField A2}
+  1.5;                                    !- Maximum Value of x {BasedOnField A2}

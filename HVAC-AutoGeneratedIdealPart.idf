@@ -1,0 +1,751 @@
+SimulationControl,
+    Yes,                     !- Do Zone Sizing Calculation
+    No,                      !- Do System Sizing Calculation
+    No,                      !- Do Plant Sizing Calculation
+    Yes,                     !- Run Simulation for Sizing Periods
+    Yes;                     !- Run Simulation for Weather File Run Periods
+
+ZoneVentilation:DesignFlowRate,
+    01_A2 Ventilation per Person,  !- Name
+    01_A2,                   !- Zone or ZoneList Name
+    MidriseApartment Apartment Occ,  !- Schedule Name
+    Flow/Person,             !- Design Flow Rate Calculation Method
+    ,                        !- Design Flow Rate {m3/s}
+    ,                        !- Flow Rate per Zone Floor Area {m3/s-m2}
+    0.002359737216,          !- Flow Rate per Person {m3/s-person}
+    ,                        !- Air Changes per Hour {1/hr}
+    ,                        !- Ventilation Type
+    ,                        !- Fan Pressure Rise {Pa}
+    ,                        !- Fan Total Efficiency
+    ,                        !- Constant Term Coefficient
+    ,                        !- Temperature Term Coefficient
+    ,                        !- Velocity Term Coefficient
+    ;                        !- Velocity Squared Term Coefficient
+
+ZoneVentilation:DesignFlowRate,
+    01_A2 Ventilation per Floor Area,  !- Name
+    01_A2,                   !- Zone or ZoneList Name
+    Always_On,               !- Schedule Name
+    Flow/Area,               !- Design Flow Rate Calculation Method
+    ,                        !- Design Flow Rate {m3/s}
+    0.0003048,               !- Flow Rate per Zone Floor Area {m3/s-m2}
+    ,                        !- Flow Rate per Person {m3/s-person}
+    ,                        !- Air Changes per Hour {1/hr}
+    ,                        !- Ventilation Type
+    ,                        !- Fan Pressure Rise {Pa}
+    ,                        !- Fan Total Efficiency
+    ,                        !- Constant Term Coefficient
+    ,                        !- Temperature Term Coefficient
+    ,                        !- Velocity Term Coefficient
+    ;                        !- Velocity Squared Term Coefficient
+
+ZoneVentilation:DesignFlowRate,
+    01_A4 Ventilation per Person,  !- Name
+    01_A4,                   !- Zone or ZoneList Name
+    MidriseApartment Apartment Occ,  !- Schedule Name
+    Flow/Person,             !- Design Flow Rate Calculation Method
+    ,                        !- Design Flow Rate {m3/s}
+    ,                        !- Flow Rate per Zone Floor Area {m3/s-m2}
+    0.002359737216,          !- Flow Rate per Person {m3/s-person}
+    ,                        !- Air Changes per Hour {1/hr}
+    ,                        !- Ventilation Type
+    ,                        !- Fan Pressure Rise {Pa}
+    ,                        !- Fan Total Efficiency
+    ,                        !- Constant Term Coefficient
+    ,                        !- Temperature Term Coefficient
+    ,                        !- Velocity Term Coefficient
+    ;                        !- Velocity Squared Term Coefficient
+
+ZoneVentilation:DesignFlowRate,
+    01_A4 Ventilation per Floor Area,  !- Name
+    01_A4,                   !- Zone or ZoneList Name
+    Always_On,               !- Schedule Name
+    Flow/Area,               !- Design Flow Rate Calculation Method
+    ,                        !- Design Flow Rate {m3/s}
+    0.0003048,               !- Flow Rate per Zone Floor Area {m3/s-m2}
+    ,                        !- Flow Rate per Person {m3/s-person}
+    ,                        !- Air Changes per Hour {1/hr}
+    ,                        !- Ventilation Type
+    ,                        !- Fan Pressure Rise {Pa}
+    ,                        !- Fan Total Efficiency
+    ,                        !- Constant Term Coefficient
+    ,                        !- Temperature Term Coefficient
+    ,                        !- Velocity Term Coefficient
+    ;                        !- Velocity Squared Term Coefficient
+
+ZoneVentilation:DesignFlowRate,
+    01_B1 1 Ventilation per Person,  !- Name
+    01_B1 1,                 !- Zone or ZoneList Name
+    MidriseApartment Apartment Occ,  !- Schedule Name
+    Flow/Person,             !- Design Flow Rate Calculation Method
+    ,                        !- Design Flow Rate {m3/s}
+    ,                        !- Flow Rate per Zone Floor Area {m3/s-m2}
+    0.002359737216,          !- Flow Rate per Person {m3/s-person}
+    ,                        !- Air Changes per Hour {1/hr}
+    ,                        !- Ventilation Type
+    ,                        !- Fan Pressure Rise {Pa}
+    ,                        !- Fan Total Efficiency
+    ,                        !- Constant Term Coefficient
+    ,                        !- Temperature Term Coefficient
+    ,                        !- Velocity Term Coefficient
+    ;                        !- Velocity Squared Term Coefficient
+
+ZoneVentilation:DesignFlowRate,
+    01_B1 1 Ventilation per Floor Area,  !- Name
+    01_B1 1,                 !- Zone or ZoneList Name
+    Always_On,               !- Schedule Name
+    Flow/Area,               !- Design Flow Rate Calculation Method
+    ,                        !- Design Flow Rate {m3/s}
+    0.0003048,               !- Flow Rate per Zone Floor Area {m3/s-m2}
+    ,                        !- Flow Rate per Person {m3/s-person}
+    ,                        !- Air Changes per Hour {1/hr}
+    ,                        !- Ventilation Type
+    ,                        !- Fan Pressure Rise {Pa}
+    ,                        !- Fan Total Efficiency
+    ,                        !- Constant Term Coefficient
+    ,                        !- Temperature Term Coefficient
+    ,                        !- Velocity Term Coefficient
+    ;                        !- Velocity Squared Term Coefficient
+
+ZoneVentilation:DesignFlowRate,
+    01_S1 Ventilation per Person,  !- Name
+    01_S1,                   !- Zone or ZoneList Name
+    MidriseApartment Apartment Occ,  !- Schedule Name
+    Flow/Person,             !- Design Flow Rate Calculation Method
+    ,                        !- Design Flow Rate {m3/s}
+    ,                        !- Flow Rate per Zone Floor Area {m3/s-m2}
+    0.002359737216,          !- Flow Rate per Person {m3/s-person}
+    ,                        !- Air Changes per Hour {1/hr}
+    ,                        !- Ventilation Type
+    ,                        !- Fan Pressure Rise {Pa}
+    ,                        !- Fan Total Efficiency
+    ,                        !- Constant Term Coefficient
+    ,                        !- Temperature Term Coefficient
+    ,                        !- Velocity Term Coefficient
+    ;                        !- Velocity Squared Term Coefficient
+
+ZoneVentilation:DesignFlowRate,
+    01_S1 Ventilation per Floor Area,  !- Name
+    01_S1,                   !- Zone or ZoneList Name
+    Always_On,               !- Schedule Name
+    Flow/Area,               !- Design Flow Rate Calculation Method
+    ,                        !- Design Flow Rate {m3/s}
+    0.0003048,               !- Flow Rate per Zone Floor Area {m3/s-m2}
+    ,                        !- Flow Rate per Person {m3/s-person}
+    ,                        !- Air Changes per Hour {1/hr}
+    ,                        !- Ventilation Type
+    ,                        !- Fan Pressure Rise {Pa}
+    ,                        !- Fan Total Efficiency
+    ,                        !- Constant Term Coefficient
+    ,                        !- Temperature Term Coefficient
+    ,                        !- Velocity Term Coefficient
+    ;                        !- Velocity Squared Term Coefficient
+
+ZoneVentilation:DesignFlowRate,
+    02_A2 Ventilation per Person,  !- Name
+    02_A2,                   !- Zone or ZoneList Name
+    MidriseApartment Apartment Occ,  !- Schedule Name
+    Flow/Person,             !- Design Flow Rate Calculation Method
+    ,                        !- Design Flow Rate {m3/s}
+    ,                        !- Flow Rate per Zone Floor Area {m3/s-m2}
+    0.002359737216,          !- Flow Rate per Person {m3/s-person}
+    ,                        !- Air Changes per Hour {1/hr}
+    ,                        !- Ventilation Type
+    ,                        !- Fan Pressure Rise {Pa}
+    ,                        !- Fan Total Efficiency
+    ,                        !- Constant Term Coefficient
+    ,                        !- Temperature Term Coefficient
+    ,                        !- Velocity Term Coefficient
+    ;                        !- Velocity Squared Term Coefficient
+
+ZoneVentilation:DesignFlowRate,
+    02_A2 Ventilation per Floor Area,  !- Name
+    02_A2,                   !- Zone or ZoneList Name
+    Always_On,               !- Schedule Name
+    Flow/Area,               !- Design Flow Rate Calculation Method
+    ,                        !- Design Flow Rate {m3/s}
+    0.0003048,               !- Flow Rate per Zone Floor Area {m3/s-m2}
+    ,                        !- Flow Rate per Person {m3/s-person}
+    ,                        !- Air Changes per Hour {1/hr}
+    ,                        !- Ventilation Type
+    ,                        !- Fan Pressure Rise {Pa}
+    ,                        !- Fan Total Efficiency
+    ,                        !- Constant Term Coefficient
+    ,                        !- Temperature Term Coefficient
+    ,                        !- Velocity Term Coefficient
+    ;                        !- Velocity Squared Term Coefficient
+
+ZoneVentilation:DesignFlowRate,
+    02_A4 Ventilation per Person,  !- Name
+    02_A4,                   !- Zone or ZoneList Name
+    MidriseApartment Apartment Occ,  !- Schedule Name
+    Flow/Person,             !- Design Flow Rate Calculation Method
+    ,                        !- Design Flow Rate {m3/s}
+    ,                        !- Flow Rate per Zone Floor Area {m3/s-m2}
+    0.002359737216,          !- Flow Rate per Person {m3/s-person}
+    ,                        !- Air Changes per Hour {1/hr}
+    ,                        !- Ventilation Type
+    ,                        !- Fan Pressure Rise {Pa}
+    ,                        !- Fan Total Efficiency
+    ,                        !- Constant Term Coefficient
+    ,                        !- Temperature Term Coefficient
+    ,                        !- Velocity Term Coefficient
+    ;                        !- Velocity Squared Term Coefficient
+
+ZoneVentilation:DesignFlowRate,
+    02_A4 Ventilation per Floor Area,  !- Name
+    02_A4,                   !- Zone or ZoneList Name
+    Always_On,               !- Schedule Name
+    Flow/Area,               !- Design Flow Rate Calculation Method
+    ,                        !- Design Flow Rate {m3/s}
+    0.0003048,               !- Flow Rate per Zone Floor Area {m3/s-m2}
+    ,                        !- Flow Rate per Person {m3/s-person}
+    ,                        !- Air Changes per Hour {1/hr}
+    ,                        !- Ventilation Type
+    ,                        !- Fan Pressure Rise {Pa}
+    ,                        !- Fan Total Efficiency
+    ,                        !- Constant Term Coefficient
+    ,                        !- Temperature Term Coefficient
+    ,                        !- Velocity Term Coefficient
+    ;                        !- Velocity Squared Term Coefficient
+
+ZoneVentilation:DesignFlowRate,
+    02_B1 Ventilation per Person,  !- Name
+    02_B1,                   !- Zone or ZoneList Name
+    MidriseApartment Apartment Occ,  !- Schedule Name
+    Flow/Person,             !- Design Flow Rate Calculation Method
+    ,                        !- Design Flow Rate {m3/s}
+    ,                        !- Flow Rate per Zone Floor Area {m3/s-m2}
+    0.002359737216,          !- Flow Rate per Person {m3/s-person}
+    ,                        !- Air Changes per Hour {1/hr}
+    ,                        !- Ventilation Type
+    ,                        !- Fan Pressure Rise {Pa}
+    ,                        !- Fan Total Efficiency
+    ,                        !- Constant Term Coefficient
+    ,                        !- Temperature Term Coefficient
+    ,                        !- Velocity Term Coefficient
+    ;                        !- Velocity Squared Term Coefficient
+
+ZoneVentilation:DesignFlowRate,
+    02_B1 Ventilation per Floor Area,  !- Name
+    02_B1,                   !- Zone or ZoneList Name
+    Always_On,               !- Schedule Name
+    Flow/Area,               !- Design Flow Rate Calculation Method
+    ,                        !- Design Flow Rate {m3/s}
+    0.0003048,               !- Flow Rate per Zone Floor Area {m3/s-m2}
+    ,                        !- Flow Rate per Person {m3/s-person}
+    ,                        !- Air Changes per Hour {1/hr}
+    ,                        !- Ventilation Type
+    ,                        !- Fan Pressure Rise {Pa}
+    ,                        !- Fan Total Efficiency
+    ,                        !- Constant Term Coefficient
+    ,                        !- Temperature Term Coefficient
+    ,                        !- Velocity Term Coefficient
+    ;                        !- Velocity Squared Term Coefficient
+
+ZoneVentilation:DesignFlowRate,
+    02_S1 Ventilation per Person,  !- Name
+    02_S1,                   !- Zone or ZoneList Name
+    MidriseApartment Apartment Occ,  !- Schedule Name
+    Flow/Person,             !- Design Flow Rate Calculation Method
+    ,                        !- Design Flow Rate {m3/s}
+    ,                        !- Flow Rate per Zone Floor Area {m3/s-m2}
+    0.002359737216,          !- Flow Rate per Person {m3/s-person}
+    ,                        !- Air Changes per Hour {1/hr}
+    ,                        !- Ventilation Type
+    ,                        !- Fan Pressure Rise {Pa}
+    ,                        !- Fan Total Efficiency
+    ,                        !- Constant Term Coefficient
+    ,                        !- Temperature Term Coefficient
+    ,                        !- Velocity Term Coefficient
+    ;                        !- Velocity Squared Term Coefficient
+
+ZoneVentilation:DesignFlowRate,
+    02_S1 Ventilation per Floor Area,  !- Name
+    02_S1,                   !- Zone or ZoneList Name
+    Always_On,               !- Schedule Name
+    Flow/Area,               !- Design Flow Rate Calculation Method
+    ,                        !- Design Flow Rate {m3/s}
+    0.0003048,               !- Flow Rate per Zone Floor Area {m3/s-m2}
+    ,                        !- Flow Rate per Person {m3/s-person}
+    ,                        !- Air Changes per Hour {1/hr}
+    ,                        !- Ventilation Type
+    ,                        !- Fan Pressure Rise {Pa}
+    ,                        !- Fan Total Efficiency
+    ,                        !- Constant Term Coefficient
+    ,                        !- Temperature Term Coefficient
+    ,                        !- Velocity Term Coefficient
+    ;                        !- Velocity Squared Term Coefficient
+
+ZoneVentilation:DesignFlowRate,
+    03_A2 Ventilation per Person,  !- Name
+    03_A2,                   !- Zone or ZoneList Name
+    MidriseApartment Apartment Occ,  !- Schedule Name
+    Flow/Person,             !- Design Flow Rate Calculation Method
+    ,                        !- Design Flow Rate {m3/s}
+    ,                        !- Flow Rate per Zone Floor Area {m3/s-m2}
+    0.002359737216,          !- Flow Rate per Person {m3/s-person}
+    ,                        !- Air Changes per Hour {1/hr}
+    ,                        !- Ventilation Type
+    ,                        !- Fan Pressure Rise {Pa}
+    ,                        !- Fan Total Efficiency
+    ,                        !- Constant Term Coefficient
+    ,                        !- Temperature Term Coefficient
+    ,                        !- Velocity Term Coefficient
+    ;                        !- Velocity Squared Term Coefficient
+
+ZoneVentilation:DesignFlowRate,
+    03_A2 Ventilation per Floor Area,  !- Name
+    03_A2,                   !- Zone or ZoneList Name
+    Always_On,               !- Schedule Name
+    Flow/Area,               !- Design Flow Rate Calculation Method
+    ,                        !- Design Flow Rate {m3/s}
+    0.0003048,               !- Flow Rate per Zone Floor Area {m3/s-m2}
+    ,                        !- Flow Rate per Person {m3/s-person}
+    ,                        !- Air Changes per Hour {1/hr}
+    ,                        !- Ventilation Type
+    ,                        !- Fan Pressure Rise {Pa}
+    ,                        !- Fan Total Efficiency
+    ,                        !- Constant Term Coefficient
+    ,                        !- Temperature Term Coefficient
+    ,                        !- Velocity Term Coefficient
+    ;                        !- Velocity Squared Term Coefficient
+
+ZoneVentilation:DesignFlowRate,
+    03_A4 Ventilation per Person,  !- Name
+    03_A4,                   !- Zone or ZoneList Name
+    MidriseApartment Apartment Occ,  !- Schedule Name
+    Flow/Person,             !- Design Flow Rate Calculation Method
+    ,                        !- Design Flow Rate {m3/s}
+    ,                        !- Flow Rate per Zone Floor Area {m3/s-m2}
+    0.002359737216,          !- Flow Rate per Person {m3/s-person}
+    ,                        !- Air Changes per Hour {1/hr}
+    ,                        !- Ventilation Type
+    ,                        !- Fan Pressure Rise {Pa}
+    ,                        !- Fan Total Efficiency
+    ,                        !- Constant Term Coefficient
+    ,                        !- Temperature Term Coefficient
+    ,                        !- Velocity Term Coefficient
+    ;                        !- Velocity Squared Term Coefficient
+
+ZoneVentilation:DesignFlowRate,
+    03_A4 Ventilation per Floor Area,  !- Name
+    03_A4,                   !- Zone or ZoneList Name
+    Always_On,               !- Schedule Name
+    Flow/Area,               !- Design Flow Rate Calculation Method
+    ,                        !- Design Flow Rate {m3/s}
+    0.0003048,               !- Flow Rate per Zone Floor Area {m3/s-m2}
+    ,                        !- Flow Rate per Person {m3/s-person}
+    ,                        !- Air Changes per Hour {1/hr}
+    ,                        !- Ventilation Type
+    ,                        !- Fan Pressure Rise {Pa}
+    ,                        !- Fan Total Efficiency
+    ,                        !- Constant Term Coefficient
+    ,                        !- Temperature Term Coefficient
+    ,                        !- Velocity Term Coefficient
+    ;                        !- Velocity Squared Term Coefficient
+
+ZoneVentilation:DesignFlowRate,
+    03_B1 Ventilation per Person,  !- Name
+    03_B1,                   !- Zone or ZoneList Name
+    MidriseApartment Apartment Occ,  !- Schedule Name
+    Flow/Person,             !- Design Flow Rate Calculation Method
+    ,                        !- Design Flow Rate {m3/s}
+    ,                        !- Flow Rate per Zone Floor Area {m3/s-m2}
+    0.002359737216,          !- Flow Rate per Person {m3/s-person}
+    ,                        !- Air Changes per Hour {1/hr}
+    ,                        !- Ventilation Type
+    ,                        !- Fan Pressure Rise {Pa}
+    ,                        !- Fan Total Efficiency
+    ,                        !- Constant Term Coefficient
+    ,                        !- Temperature Term Coefficient
+    ,                        !- Velocity Term Coefficient
+    ;                        !- Velocity Squared Term Coefficient
+
+ZoneVentilation:DesignFlowRate,
+    03_B1 Ventilation per Floor Area,  !- Name
+    03_B1,                   !- Zone or ZoneList Name
+    Always_On,               !- Schedule Name
+    Flow/Area,               !- Design Flow Rate Calculation Method
+    ,                        !- Design Flow Rate {m3/s}
+    0.0003048,               !- Flow Rate per Zone Floor Area {m3/s-m2}
+    ,                        !- Flow Rate per Person {m3/s-person}
+    ,                        !- Air Changes per Hour {1/hr}
+    ,                        !- Ventilation Type
+    ,                        !- Fan Pressure Rise {Pa}
+    ,                        !- Fan Total Efficiency
+    ,                        !- Constant Term Coefficient
+    ,                        !- Temperature Term Coefficient
+    ,                        !- Velocity Term Coefficient
+    ;                        !- Velocity Squared Term Coefficient
+
+ZoneVentilation:DesignFlowRate,
+    03_S1 Ventilation per Person,  !- Name
+    03_S1,                   !- Zone or ZoneList Name
+    MidriseApartment Apartment Occ,  !- Schedule Name
+    Flow/Person,             !- Design Flow Rate Calculation Method
+    ,                        !- Design Flow Rate {m3/s}
+    ,                        !- Flow Rate per Zone Floor Area {m3/s-m2}
+    0.002359737216,          !- Flow Rate per Person {m3/s-person}
+    ,                        !- Air Changes per Hour {1/hr}
+    ,                        !- Ventilation Type
+    ,                        !- Fan Pressure Rise {Pa}
+    ,                        !- Fan Total Efficiency
+    ,                        !- Constant Term Coefficient
+    ,                        !- Temperature Term Coefficient
+    ,                        !- Velocity Term Coefficient
+    ;                        !- Velocity Squared Term Coefficient
+
+ZoneVentilation:DesignFlowRate,
+    03_S1 Ventilation per Floor Area,  !- Name
+    03_S1,                   !- Zone or ZoneList Name
+    Always_On,               !- Schedule Name
+    Flow/Area,               !- Design Flow Rate Calculation Method
+    ,                        !- Design Flow Rate {m3/s}
+    0.0003048,               !- Flow Rate per Zone Floor Area {m3/s-m2}
+    ,                        !- Flow Rate per Person {m3/s-person}
+    ,                        !- Air Changes per Hour {1/hr}
+    ,                        !- Ventilation Type
+    ,                        !- Fan Pressure Rise {Pa}
+    ,                        !- Fan Total Efficiency
+    ,                        !- Constant Term Coefficient
+    ,                        !- Temperature Term Coefficient
+    ,                        !- Velocity Term Coefficient
+    ;                        !- Velocity Squared Term Coefficient
+
+HVACTemplate:Zone:IdealLoadsAirSystem,
+    01_A2,                   !- Zone Name
+    ,                        !- Template Thermostat Name
+    ,                        !- System Availability Schedule Name
+    ,                        !- Maximum Heating Supply Air Temperature {C}
+    ,                        !- Minimum Cooling Supply Air Temperature {C}
+    ,                        !- Maximum Heating Supply Air Humidity Ratio {kgWater/kgDryAir}
+    ,                        !- Minimum Cooling Supply Air Humidity Ratio {kgWater/kgDryAir}
+    ,                        !- Heating Limit
+    ,                        !- Maximum Heating Air Flow Rate {m3/s}
+    ,                        !- Maximum Sensible Heating Capacity {W}
+    ,                        !- Cooling Limit
+    ,                        !- Maximum Cooling Air Flow Rate {m3/s}
+    ,                        !- Maximum Total Cooling Capacity {W}
+    ,                        !- Heating Availability Schedule Name
+    ,                        !- Cooling Availability Schedule Name
+    ,                        !- Dehumidification Control Type
+    ,                        !- Cooling Sensible Heat Ratio {dimensionless}
+    ,                        !- Dehumidification Setpoint {percent}
+    ,                        !- Humidification Control Type
+    ,                        !- Humidification Setpoint {percent}
+    ,                        !- Outdoor Air Method
+    ,                        !- Outdoor Air Flow Rate per Person {m3/s}
+    ,                        !- Outdoor Air Flow Rate per Zone Floor Area {m3/s-m2}
+    ,                        !- Outdoor Air Flow Rate per Zone {m3/s}
+    ,                        !- Design Specification Outdoor Air Object Name
+    ;                        !- Demand Controlled Ventilation Type
+
+HVACTemplate:Zone:IdealLoadsAirSystem,
+    01_A4,                   !- Zone Name
+    ,                        !- Template Thermostat Name
+    ,                        !- System Availability Schedule Name
+    ,                        !- Maximum Heating Supply Air Temperature {C}
+    ,                        !- Minimum Cooling Supply Air Temperature {C}
+    ,                        !- Maximum Heating Supply Air Humidity Ratio {kgWater/kgDryAir}
+    ,                        !- Minimum Cooling Supply Air Humidity Ratio {kgWater/kgDryAir}
+    ,                        !- Heating Limit
+    ,                        !- Maximum Heating Air Flow Rate {m3/s}
+    ,                        !- Maximum Sensible Heating Capacity {W}
+    ,                        !- Cooling Limit
+    ,                        !- Maximum Cooling Air Flow Rate {m3/s}
+    ,                        !- Maximum Total Cooling Capacity {W}
+    ,                        !- Heating Availability Schedule Name
+    ,                        !- Cooling Availability Schedule Name
+    ,                        !- Dehumidification Control Type
+    ,                        !- Cooling Sensible Heat Ratio {dimensionless}
+    ,                        !- Dehumidification Setpoint {percent}
+    ,                        !- Humidification Control Type
+    ,                        !- Humidification Setpoint {percent}
+    ,                        !- Outdoor Air Method
+    ,                        !- Outdoor Air Flow Rate per Person {m3/s}
+    ,                        !- Outdoor Air Flow Rate per Zone Floor Area {m3/s-m2}
+    ,                        !- Outdoor Air Flow Rate per Zone {m3/s}
+    ,                        !- Design Specification Outdoor Air Object Name
+    ;                        !- Demand Controlled Ventilation Type
+
+HVACTemplate:Zone:IdealLoadsAirSystem,
+    01_B1 1,                 !- Zone Name
+    ,                        !- Template Thermostat Name
+    ,                        !- System Availability Schedule Name
+    ,                        !- Maximum Heating Supply Air Temperature {C}
+    ,                        !- Minimum Cooling Supply Air Temperature {C}
+    ,                        !- Maximum Heating Supply Air Humidity Ratio {kgWater/kgDryAir}
+    ,                        !- Minimum Cooling Supply Air Humidity Ratio {kgWater/kgDryAir}
+    ,                        !- Heating Limit
+    ,                        !- Maximum Heating Air Flow Rate {m3/s}
+    ,                        !- Maximum Sensible Heating Capacity {W}
+    ,                        !- Cooling Limit
+    ,                        !- Maximum Cooling Air Flow Rate {m3/s}
+    ,                        !- Maximum Total Cooling Capacity {W}
+    ,                        !- Heating Availability Schedule Name
+    ,                        !- Cooling Availability Schedule Name
+    ,                        !- Dehumidification Control Type
+    ,                        !- Cooling Sensible Heat Ratio {dimensionless}
+    ,                        !- Dehumidification Setpoint {percent}
+    ,                        !- Humidification Control Type
+    ,                        !- Humidification Setpoint {percent}
+    ,                        !- Outdoor Air Method
+    ,                        !- Outdoor Air Flow Rate per Person {m3/s}
+    ,                        !- Outdoor Air Flow Rate per Zone Floor Area {m3/s-m2}
+    ,                        !- Outdoor Air Flow Rate per Zone {m3/s}
+    ,                        !- Design Specification Outdoor Air Object Name
+    ;                        !- Demand Controlled Ventilation Type
+
+HVACTemplate:Zone:IdealLoadsAirSystem,
+    01_S1,                   !- Zone Name
+    ,                        !- Template Thermostat Name
+    ,                        !- System Availability Schedule Name
+    ,                        !- Maximum Heating Supply Air Temperature {C}
+    ,                        !- Minimum Cooling Supply Air Temperature {C}
+    ,                        !- Maximum Heating Supply Air Humidity Ratio {kgWater/kgDryAir}
+    ,                        !- Minimum Cooling Supply Air Humidity Ratio {kgWater/kgDryAir}
+    ,                        !- Heating Limit
+    ,                        !- Maximum Heating Air Flow Rate {m3/s}
+    ,                        !- Maximum Sensible Heating Capacity {W}
+    ,                        !- Cooling Limit
+    ,                        !- Maximum Cooling Air Flow Rate {m3/s}
+    ,                        !- Maximum Total Cooling Capacity {W}
+    ,                        !- Heating Availability Schedule Name
+    ,                        !- Cooling Availability Schedule Name
+    ,                        !- Dehumidification Control Type
+    ,                        !- Cooling Sensible Heat Ratio {dimensionless}
+    ,                        !- Dehumidification Setpoint {percent}
+    ,                        !- Humidification Control Type
+    ,                        !- Humidification Setpoint {percent}
+    ,                        !- Outdoor Air Method
+    ,                        !- Outdoor Air Flow Rate per Person {m3/s}
+    ,                        !- Outdoor Air Flow Rate per Zone Floor Area {m3/s-m2}
+    ,                        !- Outdoor Air Flow Rate per Zone {m3/s}
+    ,                        !- Design Specification Outdoor Air Object Name
+    ;                        !- Demand Controlled Ventilation Type
+
+HVACTemplate:Zone:IdealLoadsAirSystem,
+    02_A2,                   !- Zone Name
+    ,                        !- Template Thermostat Name
+    ,                        !- System Availability Schedule Name
+    ,                        !- Maximum Heating Supply Air Temperature {C}
+    ,                        !- Minimum Cooling Supply Air Temperature {C}
+    ,                        !- Maximum Heating Supply Air Humidity Ratio {kgWater/kgDryAir}
+    ,                        !- Minimum Cooling Supply Air Humidity Ratio {kgWater/kgDryAir}
+    ,                        !- Heating Limit
+    ,                        !- Maximum Heating Air Flow Rate {m3/s}
+    ,                        !- Maximum Sensible Heating Capacity {W}
+    ,                        !- Cooling Limit
+    ,                        !- Maximum Cooling Air Flow Rate {m3/s}
+    ,                        !- Maximum Total Cooling Capacity {W}
+    ,                        !- Heating Availability Schedule Name
+    ,                        !- Cooling Availability Schedule Name
+    ,                        !- Dehumidification Control Type
+    ,                        !- Cooling Sensible Heat Ratio {dimensionless}
+    ,                        !- Dehumidification Setpoint {percent}
+    ,                        !- Humidification Control Type
+    ,                        !- Humidification Setpoint {percent}
+    ,                        !- Outdoor Air Method
+    ,                        !- Outdoor Air Flow Rate per Person {m3/s}
+    ,                        !- Outdoor Air Flow Rate per Zone Floor Area {m3/s-m2}
+    ,                        !- Outdoor Air Flow Rate per Zone {m3/s}
+    ,                        !- Design Specification Outdoor Air Object Name
+    ;                        !- Demand Controlled Ventilation Type
+
+HVACTemplate:Zone:IdealLoadsAirSystem,
+    02_A4,                   !- Zone Name
+    ,                        !- Template Thermostat Name
+    ,                        !- System Availability Schedule Name
+    ,                        !- Maximum Heating Supply Air Temperature {C}
+    ,                        !- Minimum Cooling Supply Air Temperature {C}
+    ,                        !- Maximum Heating Supply Air Humidity Ratio {kgWater/kgDryAir}
+    ,                        !- Minimum Cooling Supply Air Humidity Ratio {kgWater/kgDryAir}
+    ,                        !- Heating Limit
+    ,                        !- Maximum Heating Air Flow Rate {m3/s}
+    ,                        !- Maximum Sensible Heating Capacity {W}
+    ,                        !- Cooling Limit
+    ,                        !- Maximum Cooling Air Flow Rate {m3/s}
+    ,                        !- Maximum Total Cooling Capacity {W}
+    ,                        !- Heating Availability Schedule Name
+    ,                        !- Cooling Availability Schedule Name
+    ,                        !- Dehumidification Control Type
+    ,                        !- Cooling Sensible Heat Ratio {dimensionless}
+    ,                        !- Dehumidification Setpoint {percent}
+    ,                        !- Humidification Control Type
+    ,                        !- Humidification Setpoint {percent}
+    ,                        !- Outdoor Air Method
+    ,                        !- Outdoor Air Flow Rate per Person {m3/s}
+    ,                        !- Outdoor Air Flow Rate per Zone Floor Area {m3/s-m2}
+    ,                        !- Outdoor Air Flow Rate per Zone {m3/s}
+    ,                        !- Design Specification Outdoor Air Object Name
+    ;                        !- Demand Controlled Ventilation Type
+
+HVACTemplate:Zone:IdealLoadsAirSystem,
+    02_B1,                   !- Zone Name
+    ,                        !- Template Thermostat Name
+    ,                        !- System Availability Schedule Name
+    ,                        !- Maximum Heating Supply Air Temperature {C}
+    ,                        !- Minimum Cooling Supply Air Temperature {C}
+    ,                        !- Maximum Heating Supply Air Humidity Ratio {kgWater/kgDryAir}
+    ,                        !- Minimum Cooling Supply Air Humidity Ratio {kgWater/kgDryAir}
+    ,                        !- Heating Limit
+    ,                        !- Maximum Heating Air Flow Rate {m3/s}
+    ,                        !- Maximum Sensible Heating Capacity {W}
+    ,                        !- Cooling Limit
+    ,                        !- Maximum Cooling Air Flow Rate {m3/s}
+    ,                        !- Maximum Total Cooling Capacity {W}
+    ,                        !- Heating Availability Schedule Name
+    ,                        !- Cooling Availability Schedule Name
+    ,                        !- Dehumidification Control Type
+    ,                        !- Cooling Sensible Heat Ratio {dimensionless}
+    ,                        !- Dehumidification Setpoint {percent}
+    ,                        !- Humidification Control Type
+    ,                        !- Humidification Setpoint {percent}
+    ,                        !- Outdoor Air Method
+    ,                        !- Outdoor Air Flow Rate per Person {m3/s}
+    ,                        !- Outdoor Air Flow Rate per Zone Floor Area {m3/s-m2}
+    ,                        !- Outdoor Air Flow Rate per Zone {m3/s}
+    ,                        !- Design Specification Outdoor Air Object Name
+    ;                        !- Demand Controlled Ventilation Type
+
+HVACTemplate:Zone:IdealLoadsAirSystem,
+    02_S1,                   !- Zone Name
+    ,                        !- Template Thermostat Name
+    ,                        !- System Availability Schedule Name
+    ,                        !- Maximum Heating Supply Air Temperature {C}
+    ,                        !- Minimum Cooling Supply Air Temperature {C}
+    ,                        !- Maximum Heating Supply Air Humidity Ratio {kgWater/kgDryAir}
+    ,                        !- Minimum Cooling Supply Air Humidity Ratio {kgWater/kgDryAir}
+    ,                        !- Heating Limit
+    ,                        !- Maximum Heating Air Flow Rate {m3/s}
+    ,                        !- Maximum Sensible Heating Capacity {W}
+    ,                        !- Cooling Limit
+    ,                        !- Maximum Cooling Air Flow Rate {m3/s}
+    ,                        !- Maximum Total Cooling Capacity {W}
+    ,                        !- Heating Availability Schedule Name
+    ,                        !- Cooling Availability Schedule Name
+    ,                        !- Dehumidification Control Type
+    ,                        !- Cooling Sensible Heat Ratio {dimensionless}
+    ,                        !- Dehumidification Setpoint {percent}
+    ,                        !- Humidification Control Type
+    ,                        !- Humidification Setpoint {percent}
+    ,                        !- Outdoor Air Method
+    ,                        !- Outdoor Air Flow Rate per Person {m3/s}
+    ,                        !- Outdoor Air Flow Rate per Zone Floor Area {m3/s-m2}
+    ,                        !- Outdoor Air Flow Rate per Zone {m3/s}
+    ,                        !- Design Specification Outdoor Air Object Name
+    ;                        !- Demand Controlled Ventilation Type
+
+HVACTemplate:Zone:IdealLoadsAirSystem,
+    03_A2,                   !- Zone Name
+    ,                        !- Template Thermostat Name
+    ,                        !- System Availability Schedule Name
+    ,                        !- Maximum Heating Supply Air Temperature {C}
+    ,                        !- Minimum Cooling Supply Air Temperature {C}
+    ,                        !- Maximum Heating Supply Air Humidity Ratio {kgWater/kgDryAir}
+    ,                        !- Minimum Cooling Supply Air Humidity Ratio {kgWater/kgDryAir}
+    ,                        !- Heating Limit
+    ,                        !- Maximum Heating Air Flow Rate {m3/s}
+    ,                        !- Maximum Sensible Heating Capacity {W}
+    ,                        !- Cooling Limit
+    ,                        !- Maximum Cooling Air Flow Rate {m3/s}
+    ,                        !- Maximum Total Cooling Capacity {W}
+    ,                        !- Heating Availability Schedule Name
+    ,                        !- Cooling Availability Schedule Name
+    ,                        !- Dehumidification Control Type
+    ,                        !- Cooling Sensible Heat Ratio {dimensionless}
+    ,                        !- Dehumidification Setpoint {percent}
+    ,                        !- Humidification Control Type
+    ,                        !- Humidification Setpoint {percent}
+    ,                        !- Outdoor Air Method
+    ,                        !- Outdoor Air Flow Rate per Person {m3/s}
+    ,                        !- Outdoor Air Flow Rate per Zone Floor Area {m3/s-m2}
+    ,                        !- Outdoor Air Flow Rate per Zone {m3/s}
+    ,                        !- Design Specification Outdoor Air Object Name
+    ;                        !- Demand Controlled Ventilation Type
+
+HVACTemplate:Zone:IdealLoadsAirSystem,
+    03_A4,                   !- Zone Name
+    ,                        !- Template Thermostat Name
+    ,                        !- System Availability Schedule Name
+    ,                        !- Maximum Heating Supply Air Temperature {C}
+    ,                        !- Minimum Cooling Supply Air Temperature {C}
+    ,                        !- Maximum Heating Supply Air Humidity Ratio {kgWater/kgDryAir}
+    ,                        !- Minimum Cooling Supply Air Humidity Ratio {kgWater/kgDryAir}
+    ,                        !- Heating Limit
+    ,                        !- Maximum Heating Air Flow Rate {m3/s}
+    ,                        !- Maximum Sensible Heating Capacity {W}
+    ,                        !- Cooling Limit
+    ,                        !- Maximum Cooling Air Flow Rate {m3/s}
+    ,                        !- Maximum Total Cooling Capacity {W}
+    ,                        !- Heating Availability Schedule Name
+    ,                        !- Cooling Availability Schedule Name
+    ,                        !- Dehumidification Control Type
+    ,                        !- Cooling Sensible Heat Ratio {dimensionless}
+    ,                        !- Dehumidification Setpoint {percent}
+    ,                        !- Humidification Control Type
+    ,                        !- Humidification Setpoint {percent}
+    ,                        !- Outdoor Air Method
+    ,                        !- Outdoor Air Flow Rate per Person {m3/s}
+    ,                        !- Outdoor Air Flow Rate per Zone Floor Area {m3/s-m2}
+    ,                        !- Outdoor Air Flow Rate per Zone {m3/s}
+    ,                        !- Design Specification Outdoor Air Object Name
+    ;                        !- Demand Controlled Ventilation Type
+
+HVACTemplate:Zone:IdealLoadsAirSystem,
+    03_B1,                   !- Zone Name
+    ,                        !- Template Thermostat Name
+    ,                        !- System Availability Schedule Name
+    ,                        !- Maximum Heating Supply Air Temperature {C}
+    ,                        !- Minimum Cooling Supply Air Temperature {C}
+    ,                        !- Maximum Heating Supply Air Humidity Ratio {kgWater/kgDryAir}
+    ,                        !- Minimum Cooling Supply Air Humidity Ratio {kgWater/kgDryAir}
+    ,                        !- Heating Limit
+    ,                        !- Maximum Heating Air Flow Rate {m3/s}
+    ,                        !- Maximum Sensible Heating Capacity {W}
+    ,                        !- Cooling Limit
+    ,                        !- Maximum Cooling Air Flow Rate {m3/s}
+    ,                        !- Maximum Total Cooling Capacity {W}
+    ,                        !- Heating Availability Schedule Name
+    ,                        !- Cooling Availability Schedule Name
+    ,                        !- Dehumidification Control Type
+    ,                        !- Cooling Sensible Heat Ratio {dimensionless}
+    ,                        !- Dehumidification Setpoint {percent}
+    ,                        !- Humidification Control Type
+    ,                        !- Humidification Setpoint {percent}
+    ,                        !- Outdoor Air Method
+    ,                        !- Outdoor Air Flow Rate per Person {m3/s}
+    ,                        !- Outdoor Air Flow Rate per Zone Floor Area {m3/s-m2}
+    ,                        !- Outdoor Air Flow Rate per Zone {m3/s}
+    ,                        !- Design Specification Outdoor Air Object Name
+    ;                        !- Demand Controlled Ventilation Type
+
+HVACTemplate:Zone:IdealLoadsAirSystem,
+    03_S1,                   !- Zone Name
+    ,                        !- Template Thermostat Name
+    ,                        !- System Availability Schedule Name
+    ,                        !- Maximum Heating Supply Air Temperature {C}
+    ,                        !- Minimum Cooling Supply Air Temperature {C}
+    ,                        !- Maximum Heating Supply Air Humidity Ratio {kgWater/kgDryAir}
+    ,                        !- Minimum Cooling Supply Air Humidity Ratio {kgWater/kgDryAir}
+    ,                        !- Heating Limit
+    ,                        !- Maximum Heating Air Flow Rate {m3/s}
+    ,                        !- Maximum Sensible Heating Capacity {W}
+    ,                        !- Cooling Limit
+    ,                        !- Maximum Cooling Air Flow Rate {m3/s}
+    ,                        !- Maximum Total Cooling Capacity {W}
+    ,                        !- Heating Availability Schedule Name
+    ,                        !- Cooling Availability Schedule Name
+    ,                        !- Dehumidification Control Type
+    ,                        !- Cooling Sensible Heat Ratio {dimensionless}
+    ,                        !- Dehumidification Setpoint {percent}
+    ,                        !- Humidification Control Type
+    ,                        !- Humidification Setpoint {percent}
+    ,                        !- Outdoor Air Method
+    ,                        !- Outdoor Air Flow Rate per Person {m3/s}
+    ,                        !- Outdoor Air Flow Rate per Zone Floor Area {m3/s-m2}
+    ,                        !- Outdoor Air Flow Rate per Zone {m3/s}
+    ,                        !- Design Specification Outdoor Air Object Name
+    ;                        !- Demand Controlled Ventilation Type
+
