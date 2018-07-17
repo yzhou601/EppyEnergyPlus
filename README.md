@@ -128,7 +128,7 @@
 
 
 
-###ReadHVACdesignLoads(resultsdir):
+### ReadHVACdesignLoads(resultsdir):
 	
 	This function is used to read the HVAC peak load results from ZoneComponentSummary Report generated from the AirIdealLoads simulation
 	
@@ -138,7 +138,7 @@
 	
 	
 	
-###compare_two_IDF(file1, file2, resultdir)
+### compare_two_IDF(file1, file2, resultdir):
 
     This function is used to compare two idf files and generating the unique part in the first file regardless of the name differences 
 	
@@ -154,7 +154,7 @@
 	
 	
 	
-###pickupHVACsystem(idfHVACfile, idfObject,zoneloadlist, NodeNumb)
+### pickupHVACsystem(idfHVACfile, idfObject,zoneloadlist, NodeNumb):
 
     This function is used for generating the idf HVAC objects, the sizes of HVAC system need to be modified for each project
 	
@@ -170,7 +170,7 @@
 	
 	
 	
-###createFolder(directory)
+### createFolder(directory):
 
     This function is used to generate directory if it's not existed.
 	
@@ -180,7 +180,7 @@
 	
 	
 	
-###SearchNode(idfpath)
+### SearchNode(idfpath):
 
     This function is used to detect the existing nodes in initial idf files, and help define the start node number to build HVAC system
 	
@@ -190,7 +190,7 @@
 	
 	
 	
-###RemoveIdealPart(IdealIDF,IdealPartIDF, fname )
+### RemoveIdealPart(IdealIDF,IdealPartIDF, fname ):
 
     This function is used to remove the air ideal load template blocks in an idf file
 	
@@ -204,7 +204,7 @@
 	
 	
 	
-###AddHvacPart(path, hvacpath)
+### AddHvacPart(path, hvacpath):
 
     This function is used to add the HVAC part from the generated HVAC idf file
 	
