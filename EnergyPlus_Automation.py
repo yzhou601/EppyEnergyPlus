@@ -136,7 +136,8 @@ def UpdateLocationInfinIDF(idf1,ddyname):
 ##write epw name into a .csv file for later use of weather file
 def WriteEPWNameToCSV(WeatherPath, CsvPath, i):
     '''
-    This function automatically writes the csv file with weather file names by reading the name list in the directory where these files stored.
+    This function automatically writes the csv file with weather file names by reading the name list in the directory
+    where these files stored.
     :param WeatherPath: This is the path to the directory where the weather files are stored
     :param CsvPath: This is the path to the .csv file
     :param i: This is the number of weather files written into the csv file in the loop
@@ -448,7 +449,7 @@ def SearchNode(idfpath):
             m = re.search(nodepattern, lines)
             if m != None:
                 l.append(int(m.group(0)))
-        if l is None:
+        if l ==[]:
             l = [0]
     NodeStartNumb = max(l)
     print('***** The largest Node Number in the IDF is: Node %r *****\n' %NodeStartNumb)
@@ -497,7 +498,7 @@ def AddHvacPart(path, hvacpath):
 
 ##set idd file
 
-DirName = 'C:\\Users\\yueyue.zhou\\Documents\\Intern\\Eppy_Demo\\'
+DirName = 'C:\\Users\\yueyue.zhou\\Desktop\\Eppy_Demo\\'
 iddfile = DirName+'Scripts'+ "\\Energy+.idd"
 #dir to store idd file used for simulation
 
@@ -538,7 +539,7 @@ compare_two_IDF(hvacIDFpath,idealIDFpath,autofileHVACDir2)
 
 ##run with parametric variables loop
 for i in weatherfilename_list:
-    fname1 = DirName + 'Bflatroof.idf'
+    fname1 = DirName + 'Corner_Large-1win-floor.idf'
     #The initial IDF before any modification
 
     resultsdir = DirName + 'Results\\' + 'Ideal\\' + i

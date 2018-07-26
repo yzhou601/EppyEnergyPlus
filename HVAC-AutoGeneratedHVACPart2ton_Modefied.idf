@@ -51,7 +51,7 @@ AirTerminal:SingleDuct:Uncontrolled,
     Diffuser 1,               !- Name
     Always On Discrete,    !- Availability Schedule Name
     Node 17,                  !- Zone Supply Air Node Name
-    AutoSize;                 !- Maximum Air Flow Rate
+    0.3246998409216;          !- Maximum Air Flow Rate
 
 
 ZoneHVAC:EquipmentList,
@@ -90,7 +90,7 @@ Coil:Cooling:DX:SingleSpeed,
     7033.70568413333,         !- Gross Rated Total Cooling Capacity
     Autosize,                 !- Gross Rated Sensible Heat Ratio
     3.52,                     !- Gross Rated Cooling COP
-    Autosize,                 !- Rated Air Flow Rate
+    0.3246998409216,          !- Rated Air Flow Rate
     773.3,                    !- Rated Evaporator Fan Power Per Volume Flow Rate
     Unitary - DX Heat Pump - Cycling - Elec reheat 1 Fan - Cooling Coil Node,    !- Air Inlet Node Name
     Unitary - DX Heat Pump - Cycling - Elec reheat 1 Cooling Coil - Heating Coil Node,    !- Air Outlet Node Name
@@ -131,7 +131,7 @@ Coil:Heating:DX:SingleSpeed,
     Always On Discrete,    !- Availability Schedule Name
     7912.91889465,            !- Gross Rated Heating Capacity
     2.93,                     !- Gross Rated Heating COP
-    Autosize,                 !- Rated Air Flow Rate
+    0.3246998409216,          !- Rated Air Flow Rate
     773.3,                    !- Rated Supply Fan Power Per Volume Flow Rate
     Unitary - DX Heat Pump - Cycling - Elec reheat 1 Cooling Coil - Heating Coil Node,    !- Air Inlet Node Name
     Unitary - DX Heat Pump - Cycling - Elec reheat 1 Heating Coil - Supplemental Coil Node,    !- Air Outlet Node Name
@@ -175,17 +175,17 @@ AirLoopHVAC:UnitarySystem,
     Coil:Heating:Electric,    !- Supplemental Heating Coil Object Type
     Elec Htg Coil 1,          !- Supplemental Heating Coil Name
     ,                         !- Cooling Supply Air Flow Rate Method
-    Autosize,                 !- Cooling Supply Air Flow Rate
+    0.3246998409216,          !- Cooling Supply Air Flow Rate
     ,                         !- Cooling Supply Air Flow Rate Per Floor Area
     ,                         !- Cooling Fraction of Autosized Cooling Supply Air Flow Rate
     ,                         !- Cooling Supply Air Flow Rate Per Unit of Capacity
     ,                         !- Heating Supply Air Flow Rate Method
-    Autosize,                 !- Heating Supply Air Flow Rate
+    0.3246998409216,          !- Heating Supply Air Flow Rate
     ,                         !- Heating Supply Air Flow Rate Per Floor Area
     ,                         !- Heating Fraction of Autosized Heating Supply Air Flow Rate
     ,                         !- Heating Supply Air Flow Rate Per Unit of Capacity
     ,                         !- No Load Supply Air Flow Rate Method
-    Autosize,                 !- No Load Supply Air Flow Rate
+    0.3246998409216,          !- No Load Supply Air Flow Rate
     ,                         !- No Load Supply Air Flow Rate Per Floor Area
     ,                         !- No Load Fraction of Autosized Cooling Supply Air Flow Rate
     ,                         !- No Load Fraction of Autosized Heating Supply Air Flow Rate
